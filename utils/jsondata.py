@@ -6,7 +6,11 @@ create_org_incorrect_name_uppercase_letter = {"displayName": "HASHERS", "name": 
 
 create_org_incorrect_name_special_char = {"displayName": "JDAGRAWAL123", "name": "@#$%^&"}
 
-update_org_display_name = {"displayName": "Jitesh"}
+update_org_correct_display_name = {"displayName": "Jitesh"}
+
+update_org_incorrect_display_name_ends_with_space = {"displayName": "Jitesh "}
+
+update_org_incorrect_display_name_empty = {"displayName": ""}
 
 create_member_or_update_type = {"type": "normal"}
 
@@ -15,3 +19,4 @@ get_boards_data = {"filter": "all"}
 create_board_data = {"name": "board_1"}
 
 create_list_data = {"name": "list_1", "idBoard": "id"}
+
