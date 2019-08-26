@@ -24,7 +24,7 @@ update_board_name_empty = {"name": "", "idOrganization": "put_id_of_org_here"}
 
 create_list_data = {"name": "list_1", "idBoard": "id"}
 
-add_member_in_board = {"type": "normal"}
+data_add_member_in_board = {"type": "normal"}
 
 set_soft_limit_list = {"value": 3}
 

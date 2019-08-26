@@ -27,10 +27,12 @@ class Boards(object):
     def add_member_in_board(self, member, query):
         url = url_add_member_in_board.format(id=self.id, idMember=member)
         response = requests.request("PUT", url, params=OAUTH_DATA, data=query)
+        return response
 
-    def remove_member_from_board(self, member, query):
+    def remove_member_from_board(self, member):
         url = url_remove_member_from_board.format(id=self.id, idMember=member)
-        response = requests.request("DELETE", url, params=OAUTH_DATA, data=query)
+        response = requests.request("DELETE", url, params=OAUTH_DATA)
+        return response
 
     def get_members_of_board(self):
         url = url_get_members_from_board.format(id=self.id)

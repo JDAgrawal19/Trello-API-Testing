@@ -63,6 +63,25 @@ class TestBoard(object):
         response = board.update_fields_of_board(update_board_name)
         assert response.status_code == requests.codes.unauthorized
 
+    @pytest.mark.usefixtures("setup_with_board")
+    def test_add_member_to_board(self):
+        response = board.add_member_in_board(member1, data_add_member_in_board)
+        assert response.status_code == requests.codes.ok
+
+    @pytest.mark.usefixtures("setup_with_board")
+    def test_remove_member_present_in_board(self):
+        board.add_member_in_board(member1, data_add_member_in_board)
+        response = board.remove_member_from_board(member1)
+        assert response.status_code == requests.codes.ok
+
+    @pytest.mark.usefixtures("setup_with_board")
+    def test_try_remove_member_not_present_in_board(self):
+        board.add_member_in_board(member1, data_add_member_in_board)
+        response = board.remove_member_from_board(member2)
+        assert response.status_code == requests.codes.unauthorized
+
+
+
 
 
 
