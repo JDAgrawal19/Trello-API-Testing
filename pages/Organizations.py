@@ -19,8 +19,14 @@ class Organizations(object):
 
     def update_fields_of_organization(self, query):
         url = url_update_organization.format(id=self.id)
-        self.response = requests.request("PUT", url=url, params=OAUTH_DATA, data=query)
-        return self.response
+        response = requests.request("PUT", url=url, params=OAUTH_DATA, data=query)
+        return response
+
+    def add_member_to_organization_or_update_member_type(self, member, query):
+        url = url_add_memeber_in_organization.format(id=self.id, idMember=member)
+        response = requests.request("PUT", url, params=OAUTH_DATA, data=query)
+        return response
+
 
 
 
