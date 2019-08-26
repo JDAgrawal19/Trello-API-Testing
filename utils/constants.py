@@ -34,6 +34,8 @@ url_add_member_in_board = "https://api.trello.com/1/boards/{id}/members/{idMembe
 
 url_remove_member_from_board = "https://api.trello.com/1/boards/{id}/members/{idMember}"
 
+url_get_members_from_board =  "https://api.trello.com/1/boards/{id}/members"
+
 url_update_board_field = "https://api.trello.com/1/boards/{id}"
 
 url_create_list_on_board = "https://api.trello.com/1/lists"
@@ -43,6 +45,10 @@ url_update_list_field = "https://api.trello.com/1/lists/{id}"
 url_rename_a_list =  "https://api.trello.com/1/lists/{id}/name"
 
 url_get_board_a_list_is_on = "https://api.trello.com/1/lists/{id}/cards"
+
+url_move_list_to_new_board = "https://api.trello.com/1/lists/id/idBoard"
+
+url_set_soft_limit_number_of_cards = "https://api.trello.com/1/lists/{id}/softLimit"
 
 url_get_cards_in_list = "https://api.trello.com/1/lists/{id}/cards"
 
