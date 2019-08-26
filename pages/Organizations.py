@@ -27,7 +27,10 @@ class Organizations(object):
         response = requests.request("PUT", url, params=OAUTH_DATA, data=query)
         return response
 
-
+    def remove_member_from_organization(self, member):
+        url = url_remove_member_from_organization.format(id=self.id, idMember=member)
+        response = requests.request("DELETE", url, params=OAUTH_DATA)
+        return response
 
 
 
