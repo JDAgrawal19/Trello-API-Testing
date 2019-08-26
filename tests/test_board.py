@@ -80,8 +80,8 @@ class TestBoard(object):
         response = board.remove_member_from_board(member2)
         assert response.status_code == requests.codes.unauthorized
 
-
-
-
-
-
+    @pytest.mark.usefixtures("setup_with_board")
+    def test_get_members_of_board(self):
+        board.add_member_in_board(member1, data_add_member_in_board)
+        response = board.get_members_of_board()
+        assert response.status_code == requests.codes.ok
