@@ -30,5 +30,10 @@ class Boards(object):
         url = url_remove_member_from_board.format(id=self.id, idMember=member)
         response = requests.request("DELETE", url, params=OAUTH_DATA, data=query)
 
+    def get_members_of_board(self):
+        url = url_get_members_from_board.format(id=self.id)
+        response = requests.request("GET", url, params=OAUTH_DATA)
+
+
 
 
