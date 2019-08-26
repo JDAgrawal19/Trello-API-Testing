@@ -20,3 +20,4 @@ create_board_data = {"name": "board_1"}
 
 create_list_data = {"name": "list_1", "idBoard": "id"}
 
+add_member_in_board = {"type": "normal"}

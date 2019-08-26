@@ -22,4 +22,13 @@ class Boards(object):
         url = url_update_board_field(id=self.id)
         response = requests.request("PUT", url, params=OAUTH_DATA)
 
+    def add_member_in_board(self, member, query):
+        url = url_add_member_in_board.format(id=self.id, idMember=member)
+        response = requests.request("PUT", url, params=OAUTH_DATA, data=query)
+
+    def remove_member_from_board(self, member, query):
+        url = url_remove_member_from_board.format(id=self.id, idMember=member)
+        response = requests.request("DELETE", url, params=OAUTH_DATA, data=query)
+
+
 

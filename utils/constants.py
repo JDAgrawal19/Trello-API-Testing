@@ -30,6 +30,10 @@ url_create_board = "https://api.trello.com/1/boards/"
 
 url_delete_board = "https://api.trello.com/1/boards/{id}"
 
+url_add_member_in_board = "https://api.trello.com/1/boards/{id}/members/{idMember}"
+
+url_remove_member_from_board = "https://api.trello.com/1/boards/{id}/members/{idMember}"
+
 url_update_board_field = "https://api.trello.com/1/boards/{id}"
 
 url_create_list_on_board = "https://api.trello.com/1/lists"
