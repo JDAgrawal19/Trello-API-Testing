@@ -19,9 +19,10 @@ class Boards(object):
         response = requests.request("DELETE", url, params=OAUTH_DATA)
         return response
 
-    def update_field_of_board_in_organization(self):
-        url = url_update_board_field(id=self.id)
-        response = requests.request("PUT", url, params=OAUTH_DATA)
+    def update_fields_of_board(self, query):
+        url = url_update_board_field.format(id=self.id)
+        response = requests.request("PUT", url, params=OAUTH_DATA, data=query)
+        return response
 
     def add_member_in_board(self, member, query):
         url = url_add_member_in_board.format(id=self.id, idMember=member)
