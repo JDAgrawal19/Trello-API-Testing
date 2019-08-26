@@ -15,6 +15,13 @@ class TestTrello(object):
         yield
         org.delete_organization()
 
+    @pytest.fixture()
+    def setup_create_org(self):
+        global org
+        org = Organizations()
+        query_create = create_org_with_correct_name
+        org.create_organization(query_create)
+
     def test_create_organization(self):
         org = Organizations()
         query = create_org_with_correct_name
@@ -71,6 +78,18 @@ class TestTrello(object):
         org.add_member_to_organization_or_update_member_type(member, query_add_member)
         response = org.remove_member_from_organization(member1)
         assert response.status_code == requests.codes.ok
+
+    @pytest.mark.usefixtures("setup_create_org")
+    def test_delete_organization(self):
+        response = org.delete_organization()
+        assert response.status_code == requests.codes.ok
+
+    @pytest.mark.usefixtures("setup_create_org")
+    def test_try_test_delete_organization_twice(self):
+        org.delete_organization()
+        response = org.delete_organization()
+        assert response.status_code == requests.codes.not_found
+
 
 
 

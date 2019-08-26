@@ -15,7 +15,8 @@ class Organizations(object):
 
     def delete_organization(self):
         url = url_delete_organization.format(id=self.id)
-        requests.request("DELETE", url=url, params=OAUTH_DATA)
+        response = requests.request("DELETE", url=url, params=OAUTH_DATA)
+        return response
 
     def update_fields_of_organization(self, query):
         url = url_update_organization.format(id=self.id)
