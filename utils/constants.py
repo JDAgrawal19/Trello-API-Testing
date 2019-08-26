@@ -8,6 +8,8 @@ OAUTH_DATA = {"key": trello_api_key, "token": trello_access_token}
 
 member1 = "ashusingla3"
 
+member2 = "ankitpoonia3"
+
 url_create_organization = "https://api.trello.com/1/organizations"
 
 url_delete_organization = "https://api.trello.com/1/organizations/{id}"
