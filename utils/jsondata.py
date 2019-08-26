@@ -16,7 +16,7 @@ create_member_or_update_type = {"type": "normal"}
 
 get_boards_data = {"filter": "all"}
 
-create_board_data = {"name": "board_1"}
+create_board_data = {"name": "board_of_hashers", "idOrganization": "put_id_of_org_here"}
 
 create_list_data = {"name": "list_1", "idBoard": "id"}
 

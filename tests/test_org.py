@@ -5,7 +5,7 @@ import time
 import pytest
 
 
-class TestTrello(object):
+class TestOrg(object):
     @pytest.fixture()
     def setup(self):
         global org

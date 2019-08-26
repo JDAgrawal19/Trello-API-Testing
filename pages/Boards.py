@@ -8,15 +8,16 @@ class Boards(object):
         self.id = None
         self.response = None
 
-    def create_a_board_in_organization(self):
+    def create_a_board_in_organization(self, query):
         url = url_create_board
-        self.response = requests.request("POST", url, params=OAUTH_DATA, data=create_board_data)
+        self.response = requests.request("POST", url, params=OAUTH_DATA, data=query)
         self.id = self.response.json()['id']
         return self.response
 
-    def delete_a_board_in_oraganization(self):
+    def delete_a_board(self):
         url = url_delete_board.format(id=self.id)
         response = requests.request("DELETE", url, params=OAUTH_DATA)
+        return response
 
     def update_field_of_board_in_organization(self):
         url = url_update_board_field(id=self.id)
