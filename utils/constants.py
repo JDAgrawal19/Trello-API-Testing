@@ -59,3 +59,5 @@ url_add_member_to_card = "https://api.trello.com/1/cards/{id}/{idMembers}"
 url_delete_card = "https://api.trello.com/1/cards/id"
 
 url_remove_member_from_card = "https://api.trello.com/1/cards/{id}/idMembers/{idMember}"
+
+url_get_the_board_card_is_on = "https://api.trello.com/1/cards/{id}/board"

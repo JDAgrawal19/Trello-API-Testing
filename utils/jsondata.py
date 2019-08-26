@@ -23,3 +23,5 @@ create_list_data = {"name": "list_1", "idBoard": "id"}
 add_member_in_board = {"type": "normal"}
 
 set_soft_limit_list = {"value": 3}
+
+get_the_board_card_is_on = {"fields": "all"}
