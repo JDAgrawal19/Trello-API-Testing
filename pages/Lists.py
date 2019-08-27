@@ -32,5 +32,11 @@ class Lists(object):
         url = url_set_soft_limit_number_of_cards.format(id=self.id)
         response = requests.request("PUT", url, params=OAUTH_DATA, data=query)
 
+    def archive_or_unarchive_a_list(self, query):
+        url = url_archive_or_unarchive_a_list.format(id=self.id)
+        response = requests.request("PUT", url, params=OAUTH_DATA, data=query)
+        return response
+
+
 
 
