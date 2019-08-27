@@ -46,7 +46,7 @@ url_rename_a_list =  "https://api.trello.com/1/lists/{id}/name"
 
 url_get_board_a_list_is_on = "https://api.trello.com/1/lists/{id}/cards"
 
-url_move_list_to_new_board = "https://api.trello.com/1/lists/id/idBoard"
+url_move_list_to_new_board = "https://api.trello.com/1/lists/{id}/idBoard"
 
 url_set_soft_limit_number_of_cards = "https://api.trello.com/1/lists/{id}/softLimit"
 

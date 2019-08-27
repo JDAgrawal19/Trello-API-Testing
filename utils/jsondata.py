@@ -28,6 +28,8 @@ create_list_data = {"name": "List of items", "idBoard": "put_board_id_here"}
 
 update_list_name_data ={"name": "List of UI Software"}
 
+move_list_to_new_board_data = {"value": "id_of_new_board"}
+
 data_add_member_in_board = {"type": "normal"}
 
 set_soft_limit_list = {"value": 3}
