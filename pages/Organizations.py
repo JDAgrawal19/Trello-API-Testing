@@ -36,14 +36,7 @@ class Organizations(object):
     def get_members_of_organizations(self):
         url = url_get_members_of_organization.format(id=self.id)
         response = requests.request("GET", url, params=OAUTH_DATA)
-
-    def remove_member_from_team_and_all_boards(self, member,):
-        url = url_remove_member_from_org_and_all_boards.format(id=self.id, idMember=member)
-        response = requests.request("DELETE", url, params=OAUTH_DATA)
-
-    def get_boards_of_organization(self, query):
-        url = url_get_boards_of_organization.format(id=self.id)
-        response = requests.request("GET", url, params=OAUTH_DATA, data=query)
+        return response
 
 
 
