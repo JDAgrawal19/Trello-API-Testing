@@ -19,9 +19,10 @@ class Cards(object):
         response = requests.request("DELETE", url, params=OAUTH_DATA)
         return response
 
-    def add_member_to_a_card(self):
-        url = url_add_member_to_card.format(id=self.id, idMember ="member")
-        response = requests.request("POST", url, params=OAUTH_DATA)
+    def add_member_to_a_card(self, query):
+        url = url_add_member_to_card.format(id=self.id)
+        response = requests.request("POST", url, params=OAUTH_DATA, data=query)
+        return response
 
     def remove_member_from_card(self, member):
         url = url_remove_member_from_card.format(id=self.id, idMember=member)

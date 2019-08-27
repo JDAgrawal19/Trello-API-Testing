@@ -39,3 +39,5 @@ get_the_board_card_is_on = {"fields": "all"}
 get_members_on_card = {"fields": "avatarHash,fullName,initials,username"}
 
 create_card_data = {"idList": "put_id_of_list_here", "name": "selenium Card"}
+
+data_add_member_in_card = {"value": "put_id_of_member_here"}

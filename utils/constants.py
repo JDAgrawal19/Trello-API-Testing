@@ -8,7 +8,11 @@ OAUTH_DATA = {"key": trello_api_key, "token": trello_access_token}
 
 member1 = "ashusingla3"
 
+member1_id = "5d5f76ecbe1a04622d63d4b9"
+
 member2 = "ankitpoonia3"
+
+member2_id = "5d5f76f2d3a4915a20f9fa74"
 
 url_create_organization = "https://api.trello.com/1/organizations"
 
@@ -54,7 +58,7 @@ url_get_cards_in_list = "https://api.trello.com/1/lists/{id}/cards"
 
 url_create_new_card = "https://api.trello.com/1/cards"
 
-url_add_member_to_card = "https://api.trello.com/1/cards/{id}/{idMembers}"
+url_add_member_to_card = "https://api.trello.com/1/cards/{id}/idMembers"
 
 url_delete_card = "https://api.trello.com/1/cards/{id}"
 
