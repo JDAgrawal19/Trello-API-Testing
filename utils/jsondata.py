@@ -18,11 +18,15 @@ get_boards_data = {"filter": "all"}
 
 create_board_data = {"name": "board_of_hashers", "idOrganization": "put_id_of_org_here"}
 
+create_board_without_org_data = {"name": "board of NITR"}
+
 update_board_name = {"name": "board_of_JECRC", "idOrganization": "put_id_of_org_here"}
 
 update_board_name_empty = {"name": "", "idOrganization": "put_id_of_org_here"}
 
-create_list_data = {"name": "list_1", "idBoard": "id"}
+create_list_data = {"name": "List of items", "idBoard": "put_board_id_here"}
+
+update_list_name_data ={"name": "List of UI Software"}
 
 data_add_member_in_board = {"type": "normal"}
 
