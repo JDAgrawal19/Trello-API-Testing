@@ -34,7 +34,7 @@ data_add_member_in_board = {"type": "normal"}
 
 set_soft_limit_list = {"value": 1}
 
-get_the_board_card_is_on = {"fields": "all"}
+data_get_the_board_card_is_on = {"fields": "all"}
 
 get_members_on_card = {"fields": "avatarHash,fullName,initials,username"}
 

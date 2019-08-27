@@ -32,6 +32,7 @@ class Cards(object):
     def get_the_board_card_is_on(self, query):
         url = url_get_the_board_card_is_on.format(id=self.id)
         response = requests.request("GET", url, params=OAUTH_DATA, data=query)
+        return response
 
     def get_members_on_a_card(self, query):
         url = url_get_the_members_on_a_card.format(id=self.id)
