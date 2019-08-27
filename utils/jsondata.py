@@ -32,8 +32,10 @@ move_list_to_new_board_data = {"value": "id_of_new_board"}
 
 data_add_member_in_board = {"type": "normal"}
 
-set_soft_limit_list = {"value": 3}
+set_soft_limit_list = {"value": 1}
 
 get_the_board_card_is_on = {"fields": "all"}
 
-get_members_on_card = {"fields":"avatarHash,fullName,initials,username"}
+get_members_on_card = {"fields": "avatarHash,fullName,initials,username"}
+
+create_card_data = {"idList": "put_id_of_list_here", "name": "selenium Card"}

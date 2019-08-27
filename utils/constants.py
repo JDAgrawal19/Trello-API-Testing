@@ -56,7 +56,7 @@ url_create_new_card = "https://api.trello.com/1/cards"
 
 url_add_member_to_card = "https://api.trello.com/1/cards/{id}/{idMembers}"
 
-url_delete_card = "https://api.trello.com/1/cards/id"
+url_delete_card = "https://api.trello.com/1/cards/{id}"
 
 url_remove_member_from_card = "https://api.trello.com/1/cards/{id}/idMembers/{idMember}"
 
