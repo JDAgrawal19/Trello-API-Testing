@@ -67,3 +67,7 @@ url_remove_member_from_card = "https://api.trello.com/1/cards/{id}/idMembers/{id
 url_get_the_board_card_is_on = "https://api.trello.com/1/cards/{id}/board"
 
 url_get_the_members_on_a_card = "https://api.trello.com/1/cards/{id}/members"
+
+url_archive_or_unarchive_a_list = "https://api.trello.com/1/lists/{id}/closed"
+
+url_add_comment_to_card = "https://api.trello.com/1/cards/{id}/actions/comments"

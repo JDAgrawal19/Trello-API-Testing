@@ -41,3 +41,7 @@ get_members_on_card = {"fields": "avatarHash,fullName,initials,username"}
 create_card_data = {"idList": "put_id_of_list_here", "name": "selenium Card"}
 
 data_add_member_in_card = {"value": "put_id_of_member_here"}
+
+data_archive_or_unarchive_a_list = {"value": "true"}
+
+data_add_comment_to_card = {"text": "This card belongs to JD Agrawal"}
