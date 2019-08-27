@@ -32,29 +32,38 @@ class TestCards(object):
         card.create_a_new_card(query)
 
 
-    @pytest.mark.usefixtures("create_list_setup")
-    def test_create_card(self):
-        card = Cards()
-        query = create_card_data
-        query["idList"] = list_obj.id
-        response = card.create_a_new_card(query)
-        assert response.status_code == requests.codes.ok
-
-    @pytest.mark.usefixtures("create_list_setup")
-    def test_delete_card(self):
-        card = Cards()
-        query = create_card_data
-        query["idList"] = list_obj.id
-        card.create_a_new_card(query)
-        response = card.delete_a_card()
-        assert response.status_code == requests.codes.ok
+    # @pytest.mark.usefixtures("create_list_setup")
+    # def test_create_card(self):
+    #     card = Cards()
+    #     query = create_card_data
+    #     query["idList"] = list_obj.id
+    #     response = card.create_a_new_card(query)
+    #     assert response.status_code == requests.codes.ok
+    #
+    # @pytest.mark.usefixtures("create_list_setup")
+    # def test_delete_card(self):
+    #     card = Cards()
+    #     query = create_card_data
+    #     query["idList"] = list_obj.id
+    #     card.create_a_new_card(query)
+    #     response = card.delete_a_card()
+    #     assert response.status_code == requests.codes.ok
+    #
+    # @pytest.mark.usefixtures("create_card")
+    # def test_add_member_to_card(self):
+    #     board.add_member_in_board(member1, data_add_member_in_board)
+    #     query = data_add_member_in_card
+    #     query["value"] = member1_id
+    #     response = card.add_member_to_a_card(query)
+    #     assert response.status_code == requests.codes.ok
 
     @pytest.mark.usefixtures("create_card")
-    def test_add_member_to_card(self):
+    def test_remove_member_from_card(self):
         board.add_member_in_board(member1, data_add_member_in_board)
         query = data_add_member_in_card
         query["value"] = member1_id
-        response = card.add_member_to_a_card(query)
+        card.add_member_to_a_card(query)
+        response = card.remove_member_from_card(member1_id)
         assert response.status_code == requests.codes.ok
 
 

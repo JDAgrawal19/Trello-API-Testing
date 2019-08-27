@@ -27,6 +27,7 @@ class Cards(object):
     def remove_member_from_card(self, member):
         url = url_remove_member_from_card.format(id=self.id, idMember=member)
         response = requests.request("DELETE", url, params=OAUTH_DATA)
+        return response
 
     def get_the_board_card_is_on(self, query):
         url = url_get_the_board_card_is_on.format(id=self.id)
