@@ -39,5 +39,11 @@ class Cards(object):
         response = requests.request("GET", url, params=OAUTH_DATA, data=query)
         return response
 
+    def add_comment_to_card(self, query):
+        url = url_add_comment_to_card.format(id=self.id)
+        response = requests.request("POST", url, params=OAUTH_DATA, data=query)
+        return response
+
+
 
 
