@@ -29,7 +29,7 @@ class TestBoard(object):
         global board
         board = Boards()
         create_board_data["idOrganization"] = org.id
-        board.create_a_board_in_organization(create_board_data)
+        board.create_a_board(create_board_data)
         yield
         board.delete_a_board()
         org.delete_organization()
@@ -38,7 +38,7 @@ class TestBoard(object):
     def test_create_board(self):
         board = Boards()
         create_board_data["idOrganization"] = org.id
-        response = board.create_a_board_in_organization(create_board_data)
+        response = board.create_a_board(create_board_data)
         try:
             assert response.status_code == requests.codes.ok
         except AssertionError:
@@ -49,7 +49,7 @@ class TestBoard(object):
     def test_delete_board(self):
         board = Boards()
         create_board_data["idOrganization"] = org.id
-        board.create_a_board_in_organization(create_board_data)
+        board.create_a_board(create_board_data)
         response = board.delete_a_board()
         try:
             assert response.status_code == requests.codes.ok

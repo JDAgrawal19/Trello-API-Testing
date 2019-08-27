@@ -1,5 +1,6 @@
 from utils.jsondata import *
 from pages.Organizations import Organizations
+from pages.Cards import Cards
 from utils.custom_logger import custom_logger
 import logging
 from pages.Boards import Boards
@@ -7,6 +8,7 @@ from pages.Lists import Lists
 import requests
 import time
 import pytest
+
 
 class TestList(object):
 
@@ -16,8 +18,7 @@ class TestList(object):
     def setup(self):
         global board2
         board2 = Boards()
-        query_create2 = create_board_without_org_data
-        board2.create_a_board_without_org(query_create2)
+        board2.create_a_board(create_board_without_org_data)
         yield
         board2.delete_a_board()
 
@@ -25,8 +26,7 @@ class TestList(object):
     def create_list_setup(self):
         global board
         board = Boards()
-        query_create = create_board_without_org_data
-        board.create_a_board_without_org(query_create)
+        board.create_a_board(create_board_without_org_data)
         global list_obj
         list_obj = Lists()
         query = create_list_data
@@ -41,18 +41,22 @@ class TestList(object):
         query["idBoard"] = board2.id
         list_obj = Lists()
         response = list_obj.create_a_new_list_on_a_board(query)
-        try:
-            assert response.status_code == requests.codes.ok
-        except AssertionError:
+        assert response.status_code == requests.codes.ok,\
             self.log.error("something went wrong test_create_list_on_board_without_org")
 
+    @pytest.mark.usefixtures("setup")
+    def test_try_create_list_with_empty_name(self):
+        query = create_list_data_with_empty_name
+        query["idBoard"] = board2.id
+        list_obj = Lists()
+        response = list_obj.create_a_new_list_on_a_board(query)
+        assert response.status_code == requests.codes.ok, \
+            self.log.error("something went wrong test_create_list_on_board_without_org")
 
     @pytest.mark.usefixtures("create_list_setup")
     def test_update_name_of_list(self):
         response = list_obj.update_fields_of_list(update_list_name_data)
-        try:
-            assert response.status_code == requests.codes.ok
-        except AssertionError:
+        assert response.status_code == requests.codes.ok, \
             self.log.error("something went wrong test_update_name_of_list")
 
     @pytest.mark.usefixtures("create_list_setup", "setup")
@@ -60,7 +64,27 @@ class TestList(object):
         query = move_list_to_new_board_data
         query["value"] = board2.id
         response = list_obj.move_list_to_a_new_board(query)
-        try:
-            assert response.status_code == requests.codes.ok
-        except AssertionError:
+        assert response.status_code == requests.codes.ok,\
             self.log.error("something went wrong test_move_list_to_new_board")
+
+    @pytest.mark.usefixtures("create_list_setup")
+    def test_get_board_details_list_is_present_on(self):
+        response = list_obj.get_the_board_a_list_is_on()
+        assert response.status_code == requests.codes.ok,\
+            self.log.error("something went wrong test_get_board_details_list_is_present_on")
+
+    @pytest.mark.usefixtures("create_list_setup")
+    def test_list_is_archived_or_not(self):
+        response = list_obj.archive_or_unarchive_a_list(data_archive_or_unarchive_a_list)
+        assert response.status_code == requests.codes.ok, \
+            self.log.error("something went wrong test_list_is_archived_or_not")
+
+    @pytest.mark.usefixtures("create_list_setup")
+    def test_list_is_subscribed_or_not(self):
+        response = list_obj.subscribe_or_unsubscribe_a_list(data_susbscribe_or_unsubscribe_a_list)
+        assert response.status_code == requests.codes.ok, \
+            self.log.error("something went wrong test_list_is_archived_or_not")
+
+
+
+

@@ -27,16 +27,16 @@ class Lists(object):
     def get_the_board_a_list_is_on(self):
         url = url_get_cards_in_list.format(id=self.id)
         response = requests.request("GET", url, params=OAUTH_DATA)
-
-    def set_a_soft_limit_of_cards_in_list(self, query):
-        url = url_set_soft_limit_number_of_cards.format(id=self.id)
-        response = requests.request("PUT", url, params=OAUTH_DATA, data=query)
+        return response
 
     def archive_or_unarchive_a_list(self, query):
         url = url_archive_or_unarchive_a_list.format(id=self.id)
         response = requests.request("PUT", url, params=OAUTH_DATA, data=query)
         return response
 
-
+    def subscribe_or_unsubscribe_a_list(self, query):
+        url = url_subscribe_list.format(id=self.id)
+        response = requests.request("PUT", url, params=OAUTH_DATA, data=query)
+        return response
 
 

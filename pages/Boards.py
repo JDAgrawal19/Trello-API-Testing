@@ -8,13 +8,7 @@ class Boards(object):
         self.id = None
         self.response = None
 
-    def create_a_board_without_org(self, query):
-        url = url_create_board
-        self.response = requests.request("POST", url, params=OAUTH_DATA, data=query)
-        self.id = self.response.json()['id']
-        return self.response
-
-    def create_a_board_in_organization(self, query):
+    def create_a_board(self, query):
         url = url_create_board
         self.response = requests.request("POST", url, params=OAUTH_DATA, data=query)
         self.id = self.response.json()['id']
