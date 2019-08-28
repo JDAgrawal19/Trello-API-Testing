@@ -54,6 +54,8 @@ url_move_list_to_new_board = "https://api.trello.com/1/lists/{id}/idBoard"
 
 url_set_soft_limit_number_of_cards = "https://api.trello.com/1/lists/{id}/softLimit"
 
+url_subscribe_list = "https://api.trello.com/1/lists/{id}/subscribed"
+
 url_get_cards_in_list = "https://api.trello.com/1/lists/{id}/cards"
 
 url_create_new_card = "https://api.trello.com/1/cards"
@@ -71,3 +73,5 @@ url_get_the_members_on_a_card = "https://api.trello.com/1/cards/{id}/members"
 url_archive_or_unarchive_a_list = "https://api.trello.com/1/lists/{id}/closed"
 
 url_add_comment_to_card = "https://api.trello.com/1/cards/{id}/actions/comments"
+
+url_add_attachment_to_card = "https://api.trello.com/1/cards/{id}/attachments"

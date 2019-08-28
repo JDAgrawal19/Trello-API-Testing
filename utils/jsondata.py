@@ -26,6 +26,8 @@ update_board_name_empty = {"name": "", "idOrganization": "put_id_of_org_here"}
 
 create_list_data = {"name": "List of items", "idBoard": "put_board_id_here"}
 
+create_list_data_with_empty_name = {"name": "  ", "idBoard": "put_board_id_here"}
+
 update_list_name_data ={"name": "List of UI Software"}
 
 move_list_to_new_board_data = {"value": "id_of_new_board"}
@@ -44,4 +46,8 @@ data_add_member_in_card = {"value": "put_id_of_member_here"}
 
 data_archive_or_unarchive_a_list = {"value": "true"}
 
+data_susbscribe_or_unsubscribe_a_list = {"value": "true"}
+
 data_add_comment_to_card = {"text": "This card belongs to JD Agrawal"}
+
+data_add_attachment_to_card = {"name": "facebook URL", "url": "https://www.facebook.com/"}

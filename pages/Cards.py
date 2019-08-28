@@ -44,6 +44,12 @@ class Cards(object):
         response = requests.request("POST", url, params=OAUTH_DATA, data=query)
         return response
 
+    def add_attachment_to_card(self,query):
+        url = url_add_attachment_to_card.format(id=self.id)
+        response = requests.request("POST", url, params = OAUTH_DATA, data=query)
+        return response
+
+
 
 
 
